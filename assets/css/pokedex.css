@@ -7,10 +7,7 @@
 }
 
 .pokemon {
-    display: flex;
-    flex-direction: column;
     margin: .5rem;
-    padding: 1rem;
     border-radius: 1rem;
     cursor: pointer;
     background-image: url(../img/background.png);
@@ -19,6 +16,13 @@
     background-position-y: 80%;
     background-size: 90%;
     background-repeat: no-repeat;
+}
+
+.pokemon a {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    text-decoration: none;
 }
 
 .pokemon .number {
@@ -45,6 +49,7 @@
     padding: 0;
     margin: 0;
     list-style: none;
+    text-transform: capitalize;
 }
 
 .pokemon .detail .types .type {
@@ -79,6 +84,7 @@
     background-color: #6c79db;
     border: none;
     border-radius: 1rem;
+    cursor: pointer;
 }
 
 @media screen and (min-width: 380px) {
