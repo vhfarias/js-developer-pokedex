@@ -29,7 +29,37 @@ pokeApi.getPokemons = (offset = 0, limit = 5) => {
     return fetch(url)
         .then((response) => response.json())
         .then((jsonBody) => jsonBody.results)
-        .then((pokemons) => pokemons.map(pokeApi.getPokemonDetail))
+        .then((results) => results.map((pokemon) => pokemon.url))
+        .then((pokemonUrls) => pokemonUrls.map(pokeApi.getPokemonByUrl))
+        .then((pokemonData) => Promise.all(pokemonData))
+        .then((pokemons) => pokemons.map((pokemonData) => new Pokemon(pokemonData)))
         .then((detailRequests) => Promise.all(detailRequests))
-        .then((pokemonsDetails) => pokemonsDetails)
+}
+
+
+//======= new content
+
+pokeApi.getPokemonByUrl = (url) => {
+    return fetch(url)
+        .then((response) => response.json())
+}
+
+pokeApi.getPokemonById = (id) => {
+    const url = `https://pokeapi.co/api/v2/pokemon/${id}`
+    return pokeApi.getPokemonByUrl(url)
+}
+
+
+pokeApi.getPokemonFullInfo = (id) => {
+    return pokeApi.getPokemonById(id)
+        .then((info) => {
+            console.log(info)
+            //get species info
+            return fetch(info.species.url)
+                .then((response) => response.json())
+                .then((speciesInfo) => info.species = speciesInfo)
+                .then(() => info)
+        })
+        .then((infoWithSpecies) => new Pokemon(infoWithSpecies))
+        .then((pokemon) => pokemon)
 }
