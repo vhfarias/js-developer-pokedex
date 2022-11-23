@@ -69,6 +69,7 @@
   overflow: hidden;
   background-color: white;
   padding-top: 1rem;
+  height: inherit;
 }
 
 .content #statSelector {
@@ -100,6 +101,7 @@
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  height: 100%;
 }
 
 .content #pokemonOverview {
@@ -109,8 +111,8 @@
 }
 
 .content #pokemonOverview img {
-  width: 180px;
-  height: 180px;
+  width: 240px;
+  height: 240px;
   object-fit: contain;
   align-self: center;
   position: relative;
@@ -205,8 +207,6 @@
 .statBarValue.great {
   background-color: #79bf79;
 }
-
-
 
 .content #pokemonInfo #moves {
   width: 80%;
