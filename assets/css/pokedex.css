@@ -84,6 +84,13 @@
     margin: .5rem;
     padding: 1rem;
     border-radius: 1rem;
+    cursor: pointer;
+    background-image: url(../img/background.png);
+    background-blend-mode: overlay;
+    background-position-x: 200%;
+    background-position-y: 80%;
+    background-size: 90%;
+    background-repeat: no-repeat;
 }
 
 .pokemon .number {
