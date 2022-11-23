@@ -2,7 +2,7 @@
 
 ## Sobre
 
-Um projeto de uma Pokedex simples para sedimentar conhecimentos de chamadas a uma API (PokeAPI)
+Um desafio de projeto da [DIO](https://www.dio.me/) que consiste em uma Pokedex simples para sedimentar conhecimentos de HTML, CSS, Javascript e  chamadas a uma API (PokeAPI)
 
 <div>
 <img src="/.github/pokedex.png" alt="pokedex screenshot" width="320">
