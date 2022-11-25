@@ -8,7 +8,7 @@ let offset = 0;
 function convertPokemonToLi(pokemon) {
     return `
     <li class="pokemon ${pokemon.type}">
-        <a href="/detail.html?id=${pokemon.number}">
+        <a href="./js-developer-pokedex/detail.html?id=${pokemon.number}">
             <span class="number">#${pokemon.number}</span>
             <span class="name">${pokemon.name}</span>
 
